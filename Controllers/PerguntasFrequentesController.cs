@@ -29,7 +29,7 @@ namespace ControleDeConteudo.Controllers
             return _perguntasFrequentesRepository.GetPerguntasFrequentes().ToList();
         }
 
-        // GET: api/PerguntasFrequentes/{id}
+
         [HttpGet("{id}")]
         [Authorize]
         public ActionResult<PerguntasFrequentes> GetPerguntasFrequentesPorID(int id)
@@ -47,12 +47,15 @@ namespace ControleDeConteudo.Controllers
         [Authorize]
         public async Task<ActionResult<PerguntasFrequentes>> PostPerguntasFrequentes([FromBody] PerguntasFrequentes perguntasFrequentes)
         {
-            var pf = _perguntasFrequentesRepository.PostPerguntasFrequentes(perguntasFrequentes);
 
-            if (pf == null)
-            {
-                return NotFound();
-            }
+            if (ModelState.IsValid) {
+                var pf = _perguntasFrequentesRepository.PostPerguntasFrequentes(perguntasFrequentes);
+
+                if (pf == null)
+                {
+                    return NotFound();
+                }
+            }         
 
             return CreatedAtAction("GetPerguntasFrequentes", new { id = perguntasFrequentes.Id }, perguntasFrequentes);
         }

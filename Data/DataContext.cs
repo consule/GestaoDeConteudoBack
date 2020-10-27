@@ -11,8 +11,11 @@ namespace ControleDeConteudo.Data
         }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<PerguntasFrequentes> PerguntasFrequentes { get; set; }
+        public DbSet<DuvidasFrequentes> DuvidasFrequentes { get; set; }
         public DbSet<BannerPrincipal> BannerPrincipal { get; set; }
-
         public DbSet<BannerDestaque> BannerDestaque { get; set; }
+        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+
     }
 }

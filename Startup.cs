@@ -62,12 +62,14 @@ namespace ControleDeConteudo
                     };
                 });
 
+            services.AddScoped<DataContext, DataContext>();
             services.AddControllers();
 
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<DataContext, DataContext>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IPerguntasFrequentesRepository, PerguntasFrequentesRepository>();
+            services.AddTransient<IDuvidasFrequentesRepository, DuvidasFrequentesRepository>();
             services.AddTransient<IBannerPrincipalRepository, BannerPrincipalRepository>();
             services.AddTransient<IBannerDestaqueRepository, BannerDestaqueRepository>();
         }

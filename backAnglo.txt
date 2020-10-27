@@ -25,9 +25,6 @@ senha: a1s2d3f4web20
 		- Título
 		- Chamada
 		- Link (saiba mais - _blank)
-	
-- CONVÊNIOS 
-http://200.201.218.150/~anglouser/novo/convenio.php
 
 
 - PERGUNTAS FRENQUENTES
@@ -35,7 +32,10 @@ http://200.201.218.150/~anglouser/novo/duvidas.php
 		
 		- Pergunta
 		- Resposta
-		
+
+
+- CONVÊNIOS 
+http://200.201.218.150/~anglouser/novo/convenio.php		
 
 
 - Ativação Landing Page Vestibulinho
@@ -43,18 +43,23 @@ http://200.201.218.150/~anglouser/novo/duvidas.php
 
 - BLOG
 	- TIPO DA POSTAGEM: Artigos / Novidades / Eventos (montar drop com esses itens)
-	- Publicado em: mês / ano
-	- Imagem principal: 670x460px (ja gerando thump para a home e blog)
+	
+	
 	- Link Youtube: 
 		- Nao obrigatorio
 		- Se contem, exibe no lugar da foto principal
 	- Chamada
 	- Texto principal
+
+
+	- Publicado em: mês / ano
+	- Ativo: sim/não
+
+	- Imagem principal: 670x460px (ja gerando thump para a home e blog)
 	- Galeria de Fotos
 		- Não Obrigatoria
 		- Upload múltiplo
 		- Imagem 800x800px
-	- Ativo: sim/não
 
 
 - APROVAÇÕES
@@ -65,3 +70,12 @@ http://200.201.218.150/~anglouser/novo/duvidas.php
 	- Aprovado em: (campo texto)
 	- Testemunho (campo texto)
 	- Ativo: sim/não
+
+
+	Login
+	BANNERS
+	    - Principal
+	    - Destaque
+  	- PERGUNTAS FRENQUENTES
+  	- DUVIDAS FRENQUENTES
+  	- BLOG
