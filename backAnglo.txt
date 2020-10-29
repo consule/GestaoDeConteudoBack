@@ -11,8 +11,8 @@ senha: a1s2d3f4web20
 1) Atualizações via Área Administrativa Desenvolvida pela Feeling Web
 
 - BANNERS
-            - Principal
-            	- Imagem principal: 1920x980px
+     - Principal
+         - Imagem principal: 1920x980px
 		- Titulo linha 1
 		- Titulo linha 2
 		- Subtitulo
@@ -27,19 +27,12 @@ senha: a1s2d3f4web20
 		- Link (saiba mais - _blank)
 
 
-- PERGUNTAS FRENQUENTES
+
+- PERGUNTAS FRENQUENTES 
 http://200.201.218.150/~anglouser/novo/duvidas.php	
 		
 		- Pergunta
 		- Resposta
-
-
-- CONVÊNIOS 
-http://200.201.218.150/~anglouser/novo/convenio.php		
-
-
-- Ativação Landing Page Vestibulinho
-?
 
 - BLOG
 	- TIPO DA POSTAGEM: Artigos / Novidades / Eventos (montar drop com esses itens)
@@ -61,7 +54,6 @@ http://200.201.218.150/~anglouser/novo/convenio.php
 		- Upload múltiplo
 		- Imagem 800x800px
 
-
 - APROVAÇÕES
 	- Nome do aluno
 	- Foto
@@ -72,10 +64,9 @@ http://200.201.218.150/~anglouser/novo/convenio.php
 	- Ativo: sim/não
 
 
-	Login
-	BANNERS
-	    - Principal
-	    - Destaque
-  	- PERGUNTAS FRENQUENTES
-  	- DUVIDAS FRENQUENTES
-  	- BLOG
+
+
+
+- Ativação Landing Page Vestibulinho ?
+- CONVÊNIOS (não é dinamico, pegar do site antigo)
+http://200.201.218.150/~anglouser/novo/convenio.php		

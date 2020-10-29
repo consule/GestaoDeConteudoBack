@@ -14,7 +14,7 @@ namespace ControleDeConteudo.Data
         public DbSet<DuvidasFrequentes> DuvidasFrequentes { get; set; }
         public DbSet<BannerPrincipal> BannerPrincipal { get; set; }
         public DbSet<BannerDestaque> BannerDestaque { get; set; }
-        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Noticias> Noticias { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
 
     }

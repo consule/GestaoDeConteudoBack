@@ -35,7 +35,7 @@ namespace ControleDeConteudo.Repositories
             return _contexto.PerguntasFrequentes.Find(id);
         }
 
-        public PerguntasFrequentes PutPerguntasFrequentes( PerguntasFrequentes perguntasFrequentes)
+        public PerguntasFrequentes PutPerguntasFrequentes(PerguntasFrequentes perguntasFrequentes)
         {        
             _contexto.Entry(perguntasFrequentes).State = EntityState.Modified;
     

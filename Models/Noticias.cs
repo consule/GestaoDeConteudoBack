@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ControleDeConteudo.Models
 {
-    public class Posts
+    public class Noticias
     {
         [Key]
         public int Id { get; set; }
@@ -15,7 +15,8 @@ namespace ControleDeConteudo.Models
         public string TextoPrincipal { get; set; }
         public DateTime Publicado { get; set; }
         public bool Ativo { get; set; }
-        public int IdCategoria { get; set; }
+
+        public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
     }
 }
