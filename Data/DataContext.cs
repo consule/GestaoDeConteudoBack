@@ -16,6 +16,7 @@ namespace ControleDeConteudo.Data
         public DbSet<BannerDestaque> BannerDestaque { get; set; }
         public DbSet<Noticias> Noticias { get; set; }
         public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<ExAlunos> ExAlunos { get; set; }
 
     }
 }

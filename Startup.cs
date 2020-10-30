@@ -66,6 +66,7 @@ namespace ControleDeConteudo
             services.AddTransient<IBannerDestaqueRepository, BannerDestaqueRepository>();
             services.AddTransient<INoticiasRepository, NoticiasRepository>();
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<IExAlunosRepository, ExAlunosRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

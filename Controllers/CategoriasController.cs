@@ -70,7 +70,6 @@ namespace ControleDeConteudo.Controllers
 
             return Ok(bp);
 
-
         }
 
 
