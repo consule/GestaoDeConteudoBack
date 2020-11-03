@@ -44,6 +44,7 @@ namespace ControleDeConteudo.Controllers
 
         // POST api/<NoticiasController>
         [HttpPost]
+        [Authorize]
         public ActionResult<Noticias> PostNoticia([FromBody] Noticias noticia)
         {
             var nt = _noticiasRepository.PostNoticias(noticia);
@@ -74,6 +75,7 @@ namespace ControleDeConteudo.Controllers
 
         // DELETE api/<NoticiasController>/5
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult DeleteNoticia(int id)
         {
             if (!NoticiaExiste(id))

@@ -141,7 +141,6 @@ D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\bin\Debug\netcoreapp3.1\runt
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.csprojAssemblyReference.cache
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.AssemblyInfoInputs.cache
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.AssemblyInfo.cs
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.csproj.CoreCompileInputs.cache
@@ -153,3 +152,4 @@ D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\stat
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.dll
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.pdb
 D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.genruntimeconfig.cache
+D:\Code\srvtfs\ConsuleCollection\ControleDeConteudo\obj\Debug\netcoreapp3.1\ControleDeConteudo.csprojAssemblyReference.cache

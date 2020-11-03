@@ -26,6 +26,13 @@ namespace ControleDeConteudo.Repositories
         {
             return _contexto.ExAlunos.Find(id);
         }
+        public ExAlunos PostExAlunos(ExAlunos exAluno)
+        {
+            _contexto.ExAlunos.Add(exAluno);
+            _contexto.SaveChanges();
+            return exAluno;
+        }
+
 
         public ExAlunos PutExAlunos(ExAlunos exAluno)
         {
@@ -49,15 +56,7 @@ namespace ControleDeConteudo.Repositories
             return exAluno;
         }
 
-        public ExAlunos PostExAlunos(ExAlunos exAluno)
-        {
-
-            //var pf = _contexto.ExAlunos.Add(exAluno);
-            _contexto.ExAlunos.Add(exAluno);
-            _contexto.SaveChanges();
-            return exAluno;
-        }
-
+       
         public ExAlunos DeleteExAlunos(int id)
         {
             var exAluno = _contexto.ExAlunos.Find(id);

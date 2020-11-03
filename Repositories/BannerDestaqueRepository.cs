@@ -51,8 +51,6 @@ namespace ControleDeConteudo.Repositories
 
         public BannerDestaque PostBannerDestaque(BannerDestaque bannerDestaque)
         {
-
-            //var pf = _contexto.BannerDestaque.Add(bannerDestaque);
             _contexto.BannerDestaque.Add(bannerDestaque);
             _contexto.SaveChanges();
             return bannerDestaque;

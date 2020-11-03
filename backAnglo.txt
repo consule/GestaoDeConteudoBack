@@ -54,7 +54,8 @@ http://200.201.218.150/~anglouser/novo/duvidas.php
 		- Upload múltiplo
 		- Imagem 800x800px
 
-- APROVAÇÕES
+
+- APROVAÇÕES (ExAlunos)
 	- Nome do aluno
 	- Foto
 	- Ano

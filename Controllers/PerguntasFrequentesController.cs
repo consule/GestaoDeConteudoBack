@@ -23,7 +23,7 @@ namespace ControleDeConteudo.Controllers
 
         // GET: api/PerguntasFrequentes
         [HttpGet]
-        [Authorize]
+
         public ActionResult<IEnumerable<PerguntasFrequentes>> GetPerguntasFrequentes()
         {
             return _perguntasFrequentesRepository.GetPerguntasFrequentes().ToList();
@@ -31,7 +31,7 @@ namespace ControleDeConteudo.Controllers
 
 
         [HttpGet("{id}")]
-        [Authorize]
+ 
         public ActionResult<PerguntasFrequentes> GetPerguntasFrequentesPorID(int id)
         {
             var perguntasFrequentes = _perguntasFrequentesRepository.GetPerguntasFrequentesPorID(id);

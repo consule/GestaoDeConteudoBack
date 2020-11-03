@@ -22,7 +22,7 @@ namespace ControleDeConteudo.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody]Usuario usuario)
+        public async Task<ActionResult<dynamic>> Authenticate([FromBody] Usuario usuario)
         {
             var x = _usuarioRepository.GetUsuario(usuario);
 

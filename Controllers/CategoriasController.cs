@@ -19,7 +19,7 @@ namespace ControleDeConteudo.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+ 
         public ActionResult<List<Categoria>> GetCategoria()
         {
             return _categoriaRepository.GetCategoria();
@@ -27,7 +27,7 @@ namespace ControleDeConteudo.Controllers
 
 
         [HttpGet("{id}")]
-        [Authorize]
+
         public ActionResult<Categoria> GetCategoriaPorID(int id)
         {
             var categoria = _categoriaRepository.GetCategoriaPorID(id);

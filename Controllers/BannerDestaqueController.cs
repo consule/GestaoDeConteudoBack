@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using ControleDeConteudo.Models;
 using ControleDeConteudo.Repositories;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace ControleDeConteudo.Controllers
 {
@@ -18,7 +22,7 @@ namespace ControleDeConteudo.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+
         public IEnumerable<BannerDestaque> GetBannerDestaque()
         {
             return _bannerDestaqueRepository.GetBannerDestaque();
@@ -26,7 +30,7 @@ namespace ControleDeConteudo.Controllers
 
 
         [HttpGet("{id}")]
-        [Authorize]
+
         public ActionResult<BannerDestaque> GetBannerDestaquePorID(int id)
         {
             var bannerDestaque = _bannerDestaqueRepository.GetBannerDestaquePorID(id);
@@ -41,26 +45,60 @@ namespace ControleDeConteudo.Controllers
   
         [HttpPost]
         [Authorize]
-        public ActionResult<BannerDestaque> PostBannerDestaque([FromBody] BannerDestaque bannerDestaque)
+        public ActionResult<BannerDestaque> PostBannerDestaque([FromForm] BannerDestaque bannerDestaque)
         {
-            var bd = _bannerDestaqueRepository.PostBannerDestaque(bannerDestaque);
-            if (bd == null)
+            if (!ModelState.IsValid)
             {
                 return NotFound();
             }
-            return CreatedAtAction("GetBannerDestaque", new { id = bannerDestaque.Id }, bannerDestaque);
+     
+            string imagem = UploadImagem(bannerDestaque);
+
+                var banner = new BannerDestaque
+                {
+                    Titulo = bannerDestaque.Titulo,
+                    Chamada = bannerDestaque.Chamada,
+                    Link = bannerDestaque.Link,
+                    Imagem = imagem,
+                    Ativo = bannerDestaque.Ativo
+
+                };
+                var bd = _bannerDestaqueRepository.PostBannerDestaque(banner);
+                if (bd == null)
+                {
+                    return NotFound();
+                }
+            return CreatedAtAction("GetBannerDestaque", new { id = banner.Id }, banner);           
         }
 
-     
         [HttpPut("{id}")]
         [Authorize]
-        public ActionResult PutBannerDestaque(int id, [FromBody] BannerDestaque bannerDestaque)
+        public ActionResult PutBannerDestaque(int id, [FromForm] BannerDestaque bannerDestaque)
         {
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+
             if (id != bannerDestaque.Id)
             {
                 return BadRequest();
             }
-            var bp = _bannerDestaqueRepository.PutBannerDestaque(bannerDestaque);
+            string imagem = UploadImagem(bannerDestaque);
+
+
+
+            var banner = new BannerDestaque
+            {
+                Id = id,
+                Titulo = bannerDestaque.Titulo,
+                Chamada = bannerDestaque.Chamada,
+                Link = bannerDestaque.Link,
+                Imagem = imagem, 
+                Ativo = bannerDestaque.Ativo
+
+            };
+            var bp = _bannerDestaqueRepository.PutBannerDestaque(banner);
 
             if (!BannerDestaqueExiste(bannerDestaque.Id))
             {
@@ -68,11 +106,26 @@ namespace ControleDeConteudo.Controllers
             }
 
             return Ok(bp);
+        }
+        private string UploadImagem(BannerDestaque imagem)
+        {
+            string uniqueFileName = null;
+            string caminhoImagem = "assets/images/bannerDestaque/";
 
-
+            if (imagem.ImagemFile != null)
+            {
+                string uploadsFolder = Path.Combine("assets\\images\\bannerDestaque");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + imagem.ImagemFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    imagem.ImagemFile.CopyTo(fileStream);
+                }
+            }
+            return caminhoImagem + uniqueFileName;
         }
 
- 
+
         [HttpDelete("{id}")]
         [Authorize]
         public ActionResult DeleteBannerDestaque(int id)
@@ -94,5 +147,8 @@ namespace ControleDeConteudo.Controllers
         {
             return _bannerDestaqueRepository.BannerDestaqueExiste(id);
         }
+
+        //Postando Imagem
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using ControleDeConteudo.Models;
 using ControleDeConteudo.Repositories;
 using Microsoft.AspNetCore.Authorization;
@@ -18,15 +20,15 @@ namespace ControleDeConteudo.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        public IEnumerable<ExAlunos> GetExAluno()
+
+        public IEnumerable<ExAlunos> GetExAlunos()
         {
             return _exAlunoRepository.GetExAlunos();
         }
 
 
         [HttpGet("{id}")]
-        [Authorize]
+
         public ActionResult<ExAlunos> GetExAlunoPorID(int id)
         {
             var exAluno = _exAlunoRepository.GetExAlunosPorID(id);
@@ -41,38 +43,85 @@ namespace ControleDeConteudo.Controllers
   
         [HttpPost]
         [Authorize]
-        public ActionResult<ExAlunos> PostExAluno([FromBody] ExAlunos exAluno)
+        public ActionResult<ExAlunos> PostExAluno([FromForm] ExAlunos exAluno)
         {
-            var bd = _exAlunoRepository.PostExAlunos(exAluno);
-            if (bd == null)
+            if (!ModelState.IsValid)
             {
                 return NotFound();
             }
-            return CreatedAtAction("GetExAlunos", new { id = exAluno.Id }, exAluno);
+            string imagem = UploadImagem(exAluno);
+
+            var exAlunoNew = new ExAlunos
+            {
+                NomeAluno = exAluno.NomeAluno,
+                Ano = exAluno.Ano,
+                Sala = exAluno.Sala,
+                AprovadoEm = exAluno.AprovadoEm,
+                Testemunho = exAluno.Testemunho,
+                Imagem = imagem,
+                Ativo = exAluno.Ativo
+
+            };
+            var x = _exAlunoRepository.PostExAlunos(exAlunoNew);
+            if (x == null)
+            {
+                return NotFound();
+            }
+            return CreatedAtAction("GetExAlunos", new { id = exAlunoNew.Id }, exAlunoNew);
         }
 
      
         [HttpPut("{id}")]
         [Authorize]
-        public ActionResult PutExAlunos(int id, [FromBody] ExAlunos exAluno)
+        public ActionResult PutExAlunos(int id, [FromForm] ExAlunos exAluno)
         {
+           
             if (id != exAluno.Id)
             {
                 return BadRequest();
             }
-            var bp = _exAlunoRepository.PutExAlunos(exAluno);
+            string imagem = UploadImagem(exAluno);
 
-            if (!ExAlunosExiste(exAluno.Id))
+            var exAlunoNew = new ExAlunos
+            {
+                Id = id,
+                NomeAluno = exAluno.NomeAluno,
+                Ano = exAluno.Ano,
+                Sala = exAluno.Sala,
+                AprovadoEm = exAluno.AprovadoEm,
+                Testemunho = exAluno.Testemunho,
+                Imagem = imagem,
+                Ativo = exAluno.Ativo
+
+            };
+            var exaluno = _exAlunoRepository.PutExAlunos(exAlunoNew);
+
+            if (!ExAlunosExiste(exAlunoNew.Id))
             {
                 return NotFound();
             }
 
-            return Ok(bp);
+            return Ok(exaluno);
+        }
+        private string UploadImagem(ExAlunos imagem)
+        {
+            string uniqueFileName = null;
+            string caminhoImagem = "assets/images/exAlunos/";
 
-
+            if (imagem.ImagemFile != null)
+            {
+                string uploadsFolder = Path.Combine("assets\\images\\exAlunos");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + imagem.ImagemFile.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    imagem.ImagemFile.CopyTo(fileStream);
+                }
+            }
+            return caminhoImagem + uniqueFileName;
         }
 
- 
+
         [HttpDelete("{id}")]
         [Authorize]
         public ActionResult DeleteExAlunos(int id)
