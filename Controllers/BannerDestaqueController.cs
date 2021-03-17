@@ -37,8 +37,6 @@ namespace ControleDeConteudo.Controllers
 
             if (bannerDestaque == null)
             {
-
-                //google
                 return NotFound();
             }
             return bannerDestaque;
