@@ -9350,34 +9350,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cristiano.consule\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\001.cconsule\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\srvtfs\\ConsuleCollection\\ControleDeConteudo\\ControleDeConteudo.csproj",
+      "projectUniqueName": "C:\\Cc\\GestaoDeConteudoBack\\ControleDeConteudo.csproj",
       "projectName": "ControleDeConteudo",
-      "projectPath": "D:\\Code\\srvtfs\\ConsuleCollection\\ControleDeConteudo\\ControleDeConteudo.csproj",
-      "packagesPath": "C:\\Users\\cristiano.consule\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\srvtfs\\ConsuleCollection\\ControleDeConteudo\\obj\\",
+      "projectPath": "C:\\Cc\\GestaoDeConteudoBack\\ControleDeConteudo.csproj",
+      "packagesPath": "C:\\Users\\001.cconsule\\.nuget\\packages\\",
+      "outputPath": "C:\\Cc\\GestaoDeConteudoBack\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\cristiano.consule\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\001.cconsule\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.rte.com.br/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -9389,6 +9392,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
@@ -9439,7 +9443,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

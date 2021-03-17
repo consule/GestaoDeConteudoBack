@@ -38,7 +38,7 @@ namespace ControleDeConteudo.Controllers
             if (bannerDestaque == null)
             {
 
-                //não retorna nada
+                //não retorna nada 2
                 return NotFound();
             }
             return bannerDestaque;
