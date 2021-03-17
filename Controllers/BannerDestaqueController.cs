@@ -37,6 +37,8 @@ namespace ControleDeConteudo.Controllers
 
             if (bannerDestaque == null)
             {
+
+
                 return NotFound();
             }
             return bannerDestaque;
